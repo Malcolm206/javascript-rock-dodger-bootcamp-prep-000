@@ -82,8 +82,8 @@ function createRock(x) {
      * we should call endGame().
      */
 
-     if (checkCollision(rock)===true){
-       return endGame()
+     if(checkCollision(rock)===true){
+       return endGame
      }
 
     /**
@@ -91,7 +91,7 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
 
-     if(top < 360){
+     if (top < 360){
        window.requestAnimationFrame(moveRock)
      }
 
@@ -100,13 +100,15 @@ function createRock(x) {
      * we should remove the rock from the DOM.
      */
 
-     else {
+     else{
        GAME.removeChild(rock)
      }
   }
 
   // We should kick off the animation of the rock around here.
+
   window.requestAnimationFrame(moveRock)
+
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision.
   ROCKS.push(rock)
@@ -147,6 +149,7 @@ function moveDodger(e) {
      e.stopPropagation()
      moveDodgerRight()
    }
+
 }
 
 function moveDodgerLeft() {
